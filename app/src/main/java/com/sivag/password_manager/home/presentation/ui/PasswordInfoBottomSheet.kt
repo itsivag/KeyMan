@@ -20,9 +20,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.sivag.password_manager.R
 import com.sivag.password_manager.home.data.PasswordDataModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -106,7 +109,9 @@ fun PasswordInfoBottomSheet(
                 modifier = Modifier.padding(end = 16.dp)
             ) {
                 val icon =
-                    if (passwordVisibility.value) Icons.Default.AccountBox else Icons.Default.AccountCircle
+                    if (passwordVisibility.value) ImageVector.vectorResource(id = R.drawable.baseline_visibility_off_24) else ImageVector.vectorResource(
+                        id = R.drawable.baseline_visibility_24
+                    )
                 Icon(icon, contentDescription = "Toggle password visibility", tint = Color.DarkGray)
             }
         }
@@ -120,10 +125,10 @@ fun PasswordInfoBottomSheet(
                         editPassword()
                         passwordInfoSheetState.hide()
                     }.invokeOnCompletion {
-                            if (!passwordInfoSheetState.isVisible) {
-                                onDismiss()
-                            }
+                        if (!passwordInfoSheetState.isVisible) {
+                            onDismiss()
                         }
+                    }
                 }, colors = ButtonDefaults.buttonColors(containerColor = Color.DarkGray)
             ) {
                 Text(

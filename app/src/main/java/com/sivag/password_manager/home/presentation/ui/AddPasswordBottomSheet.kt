@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -88,7 +89,7 @@ fun AddPasswordBottomSheet(
 
 
         var passwordHealth by remember {
-            mutableStateOf(0f)
+            mutableFloatStateOf(0f)
         }
 
         buttonText = if (!isEditPassword) {
