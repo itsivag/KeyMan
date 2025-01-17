@@ -1,6 +1,6 @@
-# Password Manager
+# KeyMan
 
-Password Manager is a password manager app built using Kotlin and Jetpack Compose, leveraging Room database for storage and AES encryption for maximum security.
+KeyMan is a password manager app built using Kotlin and Jetpack Compose, leveraging Room database for storage and AES encryption for maximum security.
 
 ## Features
 - **Password Management**: Store and manage all your passwords securely.
